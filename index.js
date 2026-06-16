@@ -40,4 +40,49 @@
     person3[selection] = "David";
     console.log(person3.name); // Output: David
 
+    let selectedColor = ["red", "green", "blue"];
+    console.log(selectedColor[0]); // Output: red
+    console.log(selectedColor[1]); // Output: green
+    console.log(selectedColor.length); // Output: 3
+
+    //Functions
+    function add(a, b) {
+        return a + b;
+    }
+    
+    function greet() {
+        return "Hello, World!";
+    }
+    
+    console.log(add(2, 3)); // Output: 5
+    console.log(greet()); // Output: Hello, World!
+
+    function greet2(name) {
+       console.log("Hello, " + name + "!");
+   
+    }
+    greet2("Alice"); // Output: Hello, Alice!
+    greet2("Bob"); // Output: Hello, Bob
+
+    //Performing a task
+    function greet3(name, lastName3) {
+        return "Hello, " + name + ''+ lastName3 + "!";
+    }
+
+    greet3("Alice", "Smith"); // Output: Hello, Alice!
+    
+
+    function square(number) {
+        return number * number;
+    }
+    console.log(square(5)); // Output: 25
+
+
+
+
+    
+
+
+
+
     
