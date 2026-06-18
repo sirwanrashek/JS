@@ -88,7 +88,9 @@ document.getElementById("arrow1").innerHTML =
 "The product is: " + resultA
 
 
-
-
-
+// Topic to cover 
+// JavaScript Arrow Functions
+//Shorter Syntax
+// Arrow Functions with One Parameter
+// Arrow Functions Return Value by Default
  
