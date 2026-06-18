@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Functions</h2>
+<p>Finding the largest number.</p>
+<p id="demo"></p>
+
+<script>
+    // Die Funktion sucht die
+    // größte Zahl aus allen übergebenen Werten
+function findMax() {
+    
+    // Startwert ist die kleinstmögliche Zahl
+  let max = -Infinity;
+
+  // Die Schleife geht
+  // alle übergebenen Argumente durch
+
+  // Stell dir arguments wie
+  // einen automatischen Sammelkorb vor,
+  // der in (fast) jeder JavaScript-Funktion 
+  // unsichtbar im Hintergrund bereitsteht.
+  //
+  //Wenn du einer Funktion Werte übergibst,
+  // landen diese immer in diesem Korb –
+  // völlig egal, ob du in den runden
+  // Klammern der Funktion vorher Variablen
+  // (wie a, b oder c) dafür angemeldet hast
+  //  oder nicht
+  for(let i = 0; i < arguments.length; i++) {
+    if (arguments[i] > max) {
+      max = arguments[i];
+    }
+  }
+  return max;
+} 
+document.getElementById("demo").innerHTML = findMax(4, 5, 6);
+
+
+// oder so // Die drei Punkte bedeuten: 
+// ASammle "den Rest" der Argumente 
+// n einem echten Array namens "zahlen"
+function findMaxModern(...zahlen) {
+    // Da "zahlen" ein echtes Array ist, können wir moderne Mathe-Befehle nutzen:
+    return Math.max(...zahlen); 
+}
+console.log(findMaxModern(4, 5, 6, 99, 2)); // Gibt 99 zurück
+
+function sumAll() {
+  let sum = 0;
+  for(let i = 0; i < arguments.length; i++) {
+    sum += arguments[i];
+  }
+  return sum;
+}
+document.getElementById("demo2").innerHTML = sumAll(1, 123, 500, 115, 44, 88);
+ 
+ // Function to subtract two numbers
+function subtract(a, b) {
+  return a - b;
+}
+
+let x1 = subtract(10, 5);
+let x2 = subtract(5, 10);
+
+document.getElementById("demo").innerHTML = "The results are " + x1 + " and " + x2;
+
+// Accessing a function with incorrect 
+// parameters can return an incorrect answer:
+// NaN
+
+
+//Function Rest Parameter
+//The rest parameter (...) allows a function to treat 
+// an indefinite number of arguments as an array:
+
+//Im Gegensatz zum veralteten arguments-Objekt 
+// ist args hier ein echtes Array.
+// Das bedeutet, du könntest damit auch moderne
+// Array-Befehle wie .sort() (zum Sortieren) nutzen.
+
+function sum(...args) {
+  let sum = 0;
+
+  //Die for...of Schleife
+  // Diese Art der Schleife ist viel kürzer 
+  // und leichter zu lesen als die klassische 
+  // for-Schleife, die du im vorherigen Beispiel 
+  // mit dem i++ benutzt hast.
+
+  //"Für jedes einzelne Element
+  // (arg) aus unserer Liste (args)
+  for (let arg of args) sum += arg; // sum = sum + arg;
+
+  return sum;
+}
+
+let x = sum(4, 9, 16, 25, 29, 100, 66, 77); //326
+
+document.getElementById("demo3").innerHTML = x; 
+// <p id="demo3"></p> nicht vergessen
+
+
+
+</script>
+
+</body>
+</html>
